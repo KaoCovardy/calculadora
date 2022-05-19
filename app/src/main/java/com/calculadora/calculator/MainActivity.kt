@@ -22,6 +22,27 @@ class MainActivity : AppCompatActivity() {
         num_sete.setOnClickListener({ AcrescentarUmaExpressao(umastr = "7", limpar_dados = true) })
         num_oito.setOnClickListener({ AcrescentarUmaExpressao(umastr = "8", limpar_dados = true) })
         num_nove.setOnClickListener({ AcrescentarUmaExpressao(umastr = "9", limpar_dados = true) })
+
+        //Adição dos Operadores
+        soma.setOnClickListener({AcrescentarUmaExpressao(umastr = "+", limpar_dados = false)})
+        subtracao.setOnClickListener({AcrescentarUmaExpressao(umastr = "-", limpar_dados = false)})
+        multiplicacao.setOnClickListener({AcrescentarUmaExpressao(umastr = "*", limpar_dados = false)})
+        divisao.setOnClickListener({AcrescentarUmaExpressao(umastr = "/", limpar_dados = false)})
+
+        //Faz a função limpar, limpeza da EXPRESSÃO e do RESULTADO digitado/mostrado na tela
+        limpar.setOnClickListener(){
+            expressao.text=""
+            resultado.text=""
+        }
+
+        // Realiza a função do backspace, apagando apenas um número por vez na "casa" expressão
+        num_backspace.setOnClickListener(){
+            val umvalor = expressao.text.toString()
+            if (umvalor.isNotBlank()){
+                expressao.text=umvalor.substring(0,umvalor.length-1)
+            }
+            resultado.text=""
+        }
     }
 
     fun AcrescentarUmaExpressao(umastr: String, limpar_dados: Boolean) {

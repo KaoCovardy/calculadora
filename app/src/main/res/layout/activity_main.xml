@@ -23,7 +23,7 @@
         />
 
     <TextView
-        android:id="@+id/resultado"
+        android:id="@+id/exp_resultado"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:textColor="@color/black"
@@ -139,11 +139,14 @@
             android:id="@+id/num_zero"
             style="@style/Numbers_Button"
             android:text="0"/>
+
         <ImageView
             android:id="@+id/num_backspace"
             style="@style/Numbers_Button"
-            android:src="@drawable/bckspc_white"
-            />
+            android:layout_width="3dp"
+            android:layout_height="90dp"
+            android:src="@drawable/backspace" />
+
         <TextView
             android:id="@+id/igual"
             style="@style/Operators_Button"
